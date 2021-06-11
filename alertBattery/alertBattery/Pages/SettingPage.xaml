@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="alertBattery.Pages.SettingPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Frame  HeightRequest="215" WidthRequest="250">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Text="Configuración para detonar las notificaciones." 
+                       FontAttributes="Bold"
+                       Grid.Row="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       FontSize="Medium"/>
+                <StackLayout Orientation="Vertical" Grid.Row="1" Margin="10">
+                    <Slider x:Name="slider"
+                            Maximum="100" 
+                            Value="{Binding LevelLow}"
+                            BackgroundColor="Black"
+                            ValueChanged="OnSliderValueChanged"/>
+
+                    <Label 
+                          
+                              HorizontalOptions="Center"
+                              VerticalOptions="CenterAndExpand" >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nivel bajo " CharacterSpacing="2" ></Span>
+                               
+                                <Span Text="{Binding LevelLow}" CharacterSpacing="1"></Span>
+                            </FormattedString>
+
+                        </Label.FormattedText>
+                    </Label>
+                    <Slider 
+                            Maximum="100" 
+                            Value="{Binding LevelFull}"
+                            BackgroundColor="Black"
+                            ValueChanged="OnSliderValueChangedFull"/>
+
+                    <Label x:Name="displayLabel"
+                          
+                              HorizontalOptions="Center"
+                              VerticalOptions="CenterAndExpand">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Nivel alto " CharacterSpacing="2" ></Span>
+
+                                <Span Text="{Binding LevelFull}" CharacterSpacing="1"></Span>
+                            </FormattedString>
+
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <ActivityIndicator
+                    Grid.Row="2"
+                    IsVisible="{Binding IsVisible}"
+                    IsRunning="{Binding IsRunning}"
+                    Color="#55BBAB"
+                    />
+                <StackLayout Orientation="Horizontal" Grid.Row="3"  HorizontalOptions="End">
+                    <Button
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        TextColor="Red"
+                        IsEnabled="{Binding IsEnabled}"
+                        Command="{Binding ClosePopupCommand}"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Italic"
+                        Text="Cancelar"
+                        />
+                    <Button
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        TextColor="Green"
+                        IsEnabled="{Binding IsEnabled}"
+                        Command="{Binding SaveCommand}"
+                        BackgroundColor="Transparent"
+                        FontAttributes="Italic"
+                        Text="Guardar"
+                        />
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </StackLayout>
+</popup:PopupPage>

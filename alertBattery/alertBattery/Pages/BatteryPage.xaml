@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="alertBattery.Pages.BatteryPage"
+             xmlns:util="clr-namespace:alertBattery.Utils">
+
+    <ContentPage.Content>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+              
+            </Grid.RowDefinitions>
+            <StackLayout Padding="10,0" Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="End">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenSettingPopupCommand}"/>
+                </StackLayout.GestureRecognizers>
+                <Label
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontAttributes="Italic"
+                    Text="Configuración" FontSize="Medium"/>
+                <Image  Source="setting.png" Margin="10">
+                    
+                </Image>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
+
+                <!--full battery-->
+                <StackLayout >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                    <Rectangle
+                        
+                   BackgroundColor="{Binding ColorBattery}"
+                   StrokeThickness="1"
+                   RadiusX="10"
+                   RadiusY="5"
+                   Grid.Row="0"
+                   WidthRequest="50"
+                   HeightRequest="15"
+                   HorizontalOptions="Center" />
+                    <Rectangle
+                   BackgroundColor="Black"
+                   StrokeThickness="1"
+                   Grid.Row="1"
+                   RadiusX="10"
+                   RadiusY="5"
+                   WidthRequest="80"
+                   HeightRequest="150"
+                   />
+                   <BoxView  
+                       WidthRequest="10"
+                       Grid.Row="1"      
+                       VerticalOptions="End"
+                       HeightRequest="{Binding ChangedLevelColor}"
+                       BackgroundColor="{Binding ColorBattery}"
+                       />
+                        <Polygon 
+                             Stroke="#000000"
+                             StrokeLineJoin="Bevel"
+                             StrokeMiterLimit="10"
+                             StrokeThickness="2" 
+                             IsVisible="{Binding IsCharging}"
+                             Grid.Row="1"
+                             Margin="7,0"
+                             VerticalOptions="Center"
+                             Points="40,1 17,37 31,37, 24,63 50,27 36,27 "/>
+                </Grid>
+                </StackLayout>
+              
+                <Label 
+                           HorizontalOptions="Center"
+                           FontSize="Large"
+                           FontAttributes="Italic" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="%"></Span>
+                            <Span Text="{Binding Level}"></Span>
+                        </FormattedString>
+                        
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+        </Grid>
+  
+    </ContentPage.Content>
+</ContentPage>
