@@ -130,7 +130,7 @@ namespace alertBattery.ViewModels
             }
 
             switch (state)
-            {
+            {   
                 case BatteryState.Charging:
                     // Currently charging
                     IsCharging = true;

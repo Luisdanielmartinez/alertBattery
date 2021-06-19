@@ -23,7 +23,7 @@ namespace alertBattery.Droid.ShanyClass
             base.OnCreate();
             Shiny.Notifications.AndroidOptions.DefaultLaunchActivityFlags = Shiny.Notifications.AndroidActivityFlags.FromBackground;
             Shiny.Notifications.AndroidOptions.DefaultNotificationImportance = Shiny.Notifications.AndroidNotificationImportance.High;
-            Shiny.Notifications.AndroidOptions.DefaultSmallIconResourceName = "icon";
+            Shiny.Notifications.AndroidOptions.DefaultSmallIconResourceName = "icono";
             AndroidShinyHost.Init(this, platformBuild: services => services.UseNotifications());
 
         }

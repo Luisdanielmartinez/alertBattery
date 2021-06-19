@@ -4,18 +4,18 @@ operate on the resource IDs instead of dealing with images, strings or binary bl
 directly.
 
 For example, a sample Android app that contains a user interface layout (main.xml),
-an internationalization string table (strings.xml) and some icons (drawable-XXX/icon.png) 
+an internationalization string table (strings.xml) and some icons (drawable-XXX/icono.png) 
 would keep its resources in the "Resources" directory of the application:
 
 Resources/
     drawable-hdpi/
-        icon.png
+        icono.png
 
     drawable-ldpi/
-        icon.png
+        icono.png
 
     drawable-mdpi/
-        icon.png
+        icono.png
 
     layout/
         main.xml
@@ -45,6 +45,6 @@ public class Resource {
     }
 }
 
-You would then use R.drawable.icon to reference the drawable/icon.png file, or Resource.layout.main 
+You would then use R.drawable.icono to reference the drawable/icono.png file, or Resource.layout.main 
 to reference the layout/main.xml file, or Resource.strings.first_string to reference the first 
 string in the dictionary file values/strings.xml.
