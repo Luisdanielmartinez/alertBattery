@@ -31,11 +31,11 @@
                 <StackLayout >
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="140"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="90"/>
                         </Grid.ColumnDefinitions>
                     <Rectangle
                         
@@ -59,21 +59,18 @@
                    <BoxView  
                        WidthRequest="10"
                        Grid.Row="1"      
-                       VerticalOptions="End"
+                       VerticalOptions="EndAndExpand"
                        HeightRequest="{Binding ChangedLevelColor}"
                        BackgroundColor="{Binding ColorBattery}"
                        />
-                        <Polygon 
-                             Stroke="#000000"
-                             StrokeLineJoin="Bevel"
-                             StrokeMiterLimit="10"
-                             StrokeThickness="2" 
+                        <Image 
+                             Source="lightning.png"
                              IsVisible="{Binding IsCharging}"
                              Grid.Row="1"
-                             Margin="7,0"
+                             HorizontalOptions="Center"
                              VerticalOptions="Center"
-                             Points="40,1 17,37 31,37, 24,63 50,27 36,27 "/>
-                </Grid>
+                            />
+                    </Grid>
                 </StackLayout>
               
                 <Label 

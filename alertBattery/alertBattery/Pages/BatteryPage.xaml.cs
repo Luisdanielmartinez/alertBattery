@@ -17,7 +17,7 @@ namespace alertBattery.Pages
         public BatteryPage()
         {
             InitializeComponent();
-            model = new BatteryViewModel(0);
+            model = new BatteryViewModel(120);
             BindingContext = model;
         }
         protected override void OnAppearing()

@@ -66,7 +66,7 @@ namespace alertBattery.Pages
             IsRunning = true;
             isVisible = true;
             Preferences.Set("levelLow", LevelLow);
-            Preferences.Set("levelFull", LevelFull);
+            Preferences.Set("levelFull", LevelFull);   
             Close();
         }
     }
